@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your flights ZymAirlines.">
+    <title>Flight Bookings - ZymAirlines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #000000;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #d71a1a;
+            padding: 15px 0;
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #ffffff !important;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffe0e0 !important;
+        }
+
+        .booking-form {
+            padding: 3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+
+        .booking-form h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .booking-form label {
+            font-weight: bold;
+            margin-top: 1rem;
+            display: block;
+            color: #000000;
+        }
+
+        .booking-form input[type="text"],
+        .booking-form input[type="date"],
+        .booking-form select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .booking-form button {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 1.5rem;
+            background-color: #ff0000;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .booking-form button:hover {
+            background-color: #000000;
+            color: white;
+            transition: background-color 0.3s ease-in;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .footer i {
+            color: #ffffff;
+            margin: 0 10px;
+            font-size: 1.25rem;
+            transition: color 0.3s;
+        }
+        .footer i:hover {
+            color: #d71a1a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <a href="airline.html"><img src="logo4.jpg.png" width="80" height="70" alt="Logo"></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="airline.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Flight.html">Flights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Hotels.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Promo.html">Promos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contect us.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="booking-form">
+            <h1>Book Your Flight</h1>
+            <form action="submit_flight_booking.php" method="post">
+                <label for="customerName">Customer Name</label>
+                <input type="text" id="customerName" name="customerName" required>
+
+                <label for="departure">Departure Location</label>
+                <select id="departure" name="departure" required>
+					<option value=""></option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Bangkok">Bangkok</option>
+                    <option value="Jakarta">Jakarta</option>
+					<option value="New York">New York</option>
+					<option value="London">London</option>
+					<option value="Los Angeles">Los Angeles</option>
+					<option value="Tokyo">Tokyo</option>
+					<option value="Dubai">Dubai</option>
+                </select>
+
+                <label for="arrival">Arrival Location</label>
+                <select id="arrival" name="arrival" required>
+					<option value=""></option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Bangkok">Bangkok</option>
+                    <option value="Jakarta">Jakarta</option>
+                    <option value="New York">New York</option>
+					<option value="London">London</option>
+					<option value="Los Angeles">Los Angeles</option>
+					<option value="Tokyo">Tokyo</option>
+					<option value="Dubai">Dubai</option>
+                </select>
+
+                <label for="departureDate">Departure Date</label>
+                <input type="date" id="departureDate" name="departureDate" required>
+
+                <label for="returnDate">Return Date (Optional)</label>
+                <input type="date" id="returnDate" name="returnDate">
+
+                <label for="numPassengers">Number of Passengers</label>
+                <input type="text" id="numPassengers" name="numPassengers" required>
+
+                <label for="seatClass">Seat Class</label>
+                <select id="seatClass" name="seatClass" required>
+                    <option value="economy">Economy</option>
+                    <option value="business">Business</option>
+                    <option value="first">First Class</option>
+                </select>
+
+                <label for="totalPayment">Total Payment (RM)</label>
+                <input type="text" id="totalPayment" name="totalPayment" readonly>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </section>
+    </main>
+
+    <div class="footer">
+        <p>&copy; 2024 AirlineBooking. All rights reserved.</p>
+           <a href="privacy_policy.html">Privacy Policy</a> |
+            <a href="terms_conditions.html">Terms and Conditions</a>
+	</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Calculate the total payment based on passenger count and seat class
+        document.getElementById('numPassengers').addEventListener('input', calculatePayment);
+        document.getElementById('seatClass').addEventListener('change', calculatePayment);
+
+        function calculatePayment() {
+            const numPassengers = parseInt(document.getElementById('numPassengers').value || 0);
+            const seatClass = document.getElementById('seatClass').value;
+
+            let pricePerPassenger = 0;
+            if (seatClass === 'economy') {
+                pricePerPassenger = 150;
+            } else if (seatClass === 'business') {
+                pricePerPassenger = 500;
+            } else if (seatClass === 'first') {
+                pricePerPassenger = 1000;
+            }
+
+            const totalPayment = numPassengers > 0 ? numPassengers * pricePerPassenger : 0;
+            document.getElementById('totalPayment').value = totalPayment.toFixed(2);
+        }
+    </script>
+</body>
+</html>
